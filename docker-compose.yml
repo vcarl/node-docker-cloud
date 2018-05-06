@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  hello-world:
+    build:
+      context: .
+    volumes:
+      - ./:/usr/home/app
+    ports:
+      - "3000:3000"
+    command: "yarn watch"
+    secrets:
+      - env
+  
+secrets:
+  env:
+    file: .env
